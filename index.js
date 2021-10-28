@@ -1,17 +1,15 @@
-const fs = require('fs');
+var Reader = require("./Reader");
+
+var leitor = new Reader();
 
 
-fs.readFile("./Henrique",{encoding:'utf-8'},(erro, dados)=>{//leitura de arquivos
-    if(erro){
-        console.log('Error')
-    }else{
-        console.log(dados);
-    }
+ async function main(){
+    
 
-})
+    var dados = await leitor.Read('./users.csv');
+    console.log(dados)
 
-fs.writeFile("./Henrique","Novo conteúdo do arquivo!",(err)=>{
-    if(err){
-        console.log("Erro durante o salvamento...")
-    }
-})
+ } 
+
+main();
+
